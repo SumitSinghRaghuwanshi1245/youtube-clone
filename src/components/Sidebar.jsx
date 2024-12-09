@@ -237,7 +237,7 @@ function Sidebar() {
         <br /> Test new features
       </span>
       <br />
-      <p className="mt-3 text-xs text-gray-500">© 2024 Learn Coding</p>
+      <p className="mt-3 text-xs text-gray-500">© Sumit Singh Raghuwanshi 2024 </p>
     </div>
   );
 }

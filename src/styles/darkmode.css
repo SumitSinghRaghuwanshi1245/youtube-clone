@@ -1,0 +1,99 @@
+/* Default (light) theme variables */
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: #f8f8f8;
+    --text-color: #333333;
+    --accent-color: #007bff;
+    --border-color: #dddddd;
+}
+
+/* Dark theme variables */
+[data-theme='dark'] {
+    --primary-color: #1a1a1a;
+    --secondary-color: #2d2d2d;
+    --text-color: #ffffff;
+    --accent-color: #4da3ff;
+    --border-color: #404040;
+}
+
+/* Apply theme variables to elements */
+body {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+/* Theme switch styling */
+.theme-switch-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.theme-switch {
+    display: inline-block;
+    position: relative;
+    width: 60px;
+    height: 34px;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+}
+
+.slider-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    font-size: 16px;
+    transition: 0.4s;
+}
+
+[data-theme='dark'] .slider-icon {
+    right: 10px;
+}
+
+[data-theme='light'] .slider-icon {
+    left: 10px;
+}
+
+input:checked + .slider {
+    background-color: var(--accent-color);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+} 

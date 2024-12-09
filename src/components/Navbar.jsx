@@ -1,15 +1,21 @@
 import React, { useState } from "react";
 import Avatar from "react-avatar";
-
+// import { Popup } from "./Popup"
 import { AiOutlineMenu } from "react-icons/ai";
 import { CiSearch } from "react-icons/ci";
 import { IoMdMic } from "react-icons/io";
 import { RiVideoAddLine } from "react-icons/ri";
 import { AiOutlineBell } from "react-icons/ai";
-
+// import { Darkmode } from "./Darkmode"
 import logo from "../../public/logo.png";
 import profile from "../../public/sumittt.jpg";
 import { useNavigate } from "react-router-dom";
+import { MdDarkMode } from "react-icons/md";
+import Darkmode from "./Darkmode";
+import PopupCard from "./Popup";
+// import Ai from "./Ai";
+// import Top from "./Top";
+// import Notes from "./Notes";
 function Navbar() {
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -29,9 +35,17 @@ function Navbar() {
     <div className="flex justify-between fixed top-0 w-[100%] bg-white px-6 py-2 ">
       <div className="flex items-center space-x-4 ">
         <AiOutlineMenu className="text-xl cursor-pointer" />
+        
         <img src={logo} alt="" className="cursor-pointer w-28" />
+        <PopupCard/>
+        {/* <Ai/>
+    <Notes/> */}
+        {/* <Top/> */}
+        <Darkmode />
       </div>
+      
       <div className="flex w-[35%] items-center ">
+        
         <div className="w-[100%] px-4 py-2 border-[1px] border-gray-400 rounded-l-full">
           <input
             type="text"
@@ -42,22 +56,33 @@ function Navbar() {
             value={searchQuery}
           />
         </div>
+        
         <button
           className="px-4 py-2 border-[1px] border-gray-400 bg-gray-100 rounded-r-full"
           onClick={() => searchQueryHandler("searchButton")}
         >
           <CiSearch size={"24px"} />
         </button>
+        
+        
+
+        
         <IoMdMic
           size={"42px"}
           className="p-2 ml-3 duration-200 border border-gray-600 rounded-full cursor-pointer hover:bg-gray-200"
         />
       </div>
+      
       <div className="flex items-center space-x-5 ">
+     
         <RiVideoAddLine className="text-2xl" />
         <AiOutlineBell className="text-2xl" />
         <Avatar src={profile} size="32" round={true} />
+        {/* <button>{Popup}</button> */}
+       {/* <button><MdDarkMode src={Darkmode} className="cursor-pointer" /></button>  */}
+       
       </div>
+      
     </div>
   );
 }
